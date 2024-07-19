@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Tarea</title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+	
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+
+<div class="container">
+	
+	<h1>Tarea: <small>tabla del 3</small></h1>
+	<hr>
+
+	<select id="cmbBase" class="form-control">
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5" selected>5</option>
+		<option value="6">6</option>
+	</select>
+	<br>
+
+
+	<button class="btn btn-primary">Agregar línea</button>
+	<br><br>
+	
+	
+	<table class="table table-striped">
+		<tr>
+			<th>Base</th>
+			<th>x</th>
+			<th>Número</th>
+			<th>=</th>
+			<th>Resultado</th>
+		</tr>
+		
+		
+
+
+
+	</table>
+
+
+
+
+</div>
+
+
+<script>
+	
+(function(){
+
+	var contador = 0;
+
+
+	$("button").on("click",function(){
+
+		contador ++;
+
+		var base = $("#cmbBase").val();
+
+
+		var linea = "";
+
+		linea += '<tr>';
+		linea += 	'<td>'+ base +'</td>';
+		linea += 	'<td>x</td>';
+		linea += 	'<td>'+ contador +'</td>';
+		linea += 	'<td>=</td>';
+		linea += 	'<td>'+ ( contador * base ) +'</td>';
+		linea += '</tr>';
+
+		$("table").append( linea );
+
+	});
+
+
+	// Funcion que detecta el cambio de la base
+	$("#cmbBase").on("change",function(){
+
+		$("tr").not(":eq(0)").remove();
+		contador = 0;
+
+	});
+
+
+})();
+
+
+
+
+
+</script>
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

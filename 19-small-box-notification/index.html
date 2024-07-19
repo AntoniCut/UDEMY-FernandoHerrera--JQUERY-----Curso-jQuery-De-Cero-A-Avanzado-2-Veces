@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> Small Notification - Curso jQuery de Cero a Avanzado - Udemy - Fernando Herrera </title>
+
+	<!-- **********  Importacion del jQuery  ********** -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+
+	<!--  ********** Importacion del GSAP  **********  -->
+	<script src="js/lib/gsap.min.js"></script>
+	
+	<!--  ********** Importacion del Bootstrap y Hoja de Estilos  **********  -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- **********  Importación de la Libreria 'FontAweSome' -->
+	<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+
+	<!--  **********  Archivo de jQuery  **********  -->
+	<script src="js/smallBox.js"> </script>
+
+</head>
+
+
+<body>
+
+	<!--  ----------  Contenedor de la Caja  ----------  -->
+	<!-- <div class="smallBox-contenedor"> -->
+
+		<!--  -----  Contenedor Foto  -----  -->
+		<!-- <div class="smallBox-foto"> -->
+			<!-- <img src="img/foto.jpg"> -->
+		<!-- </div> -->
+
+		<!--  -----  Contenedor Contenido  -----  -->
+		<!-- <div class="smallBox-contenido" align="center"> -->
+
+		<!--  -----  Título y SubTítulo  -----  -->
+		<!-- <div class="smallBox-textoContenedor" align="left"> -->
+		<!--	 <span class="smallBox-titulo"> Al Aire </span> -->
+		<!-- 	<span class="smallBox-subTitulo"> La voz de Costa Rica vivo </span> -->
+		<!-- </div> -->
+
+		<!--  -----  Pico de la Caja de Color Verde  -----  -->
+		<!-- <div class="smallBox-pico"> </div> -->
+
+		<!--  -----  Caja de Color Verde  -----  -->
+		<!-- <div class="smallBox-cajaColor"> -->
+
+			<!--  Parte Izquierda  -->
+			<!-- <div class="smallBox-colorTexto"> -->
+				<!-- <i class="fa fa-bell-o"> </i> -->
+					<!-- Karen Melissa 107.1 fm -->
+			<!-- </div> -->
+
+			<!--  Parte Derecha  -->
+			<!-- <div class="smallBox-colorIcon"> -->
+				<!-- <i class="fa fa-envelope-o fa-2x"> </i> -->
+			<!-- </div> -->
+
+		<!-- </div> -->
+
+			<!--  -----  Caja de la Sombra  -----  -->
+			<!-- <div class="smallBox-sombra"> </div> -->
+
+		<!-- </div> -->
+
+	<!-- </div> -->
+
+	<div class="container">
+
+		<h1>Small: <small>Notification</small></h1>
+		<hr>
+
+	</div>
+
+
+	<!--  **********  Llamada al plugin 'smallBox()'  **********  -->
+	<script>
+
+		$(document).ready(function () {
+
+			//  -----  Documento Cargado  -----
+			console.warn('Documento Cargado!!!!!');
+
+			//  -----  Llamada a la Función  -----
+			$.smallBox({
+				titulo: "Titulo",
+				subtitulo: "La voz de Costa Rica",
+				contenido: "Karen Melissa 107.1 fm",
+				img: "img/foto2.jpeg"
+			});
+
+		});
+
+	</script>
+
+</body>
+
+</html>

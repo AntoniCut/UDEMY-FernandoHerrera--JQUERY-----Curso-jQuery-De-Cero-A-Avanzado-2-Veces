@@ -1,0 +1,57 @@
+<!--  ************************************  -->
+<!--  **********  /insert.html  **********  -->
+<!--  ************************************  -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> Ajax - INSERT - Curso jQuery de Cero a Avanzado - Udemy - Fernando Herrera </title>
+
+	<!--  **********  Importacion del jQuery  ********** -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+
+
+	<!--  **********  Importacion del Bootstrap y Hojas de Estilos  ********** -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!--  **********  Importación del FontAwesome  **********  -->
+	<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+
+	<div class="container">
+
+		<h1> Peticiones Ajax - INSERT <small> jquery </small></h1>
+		<hr>
+
+		<form class="form-horizontal" id="frmData">
+
+			<label> Nombre </label>
+			<input type="text" name="txtnombre" class="form-control" id="idNombre">
+
+			<label> Estado </label>
+			<select name="cmbestado" class="form-control">
+				<option value="activo"> Activo </option>
+				<option value="eliminado"> Eliminado </option>
+			</select>
+
+			<br>
+			<a href="index.html" class="btn btn-danger"> <i class="fa fa-times"> </i> Cancelar </a>
+			<button type="submit" class="btn btn-primary"> <i class="fa fa-save"> </i> Guardar </button>
+
+		</form>
+
+	</div>
+
+	<!--  **********  Archivo jQuery  **********  -->
+	<script src="js/insert.js"></script>
+
+</body>
+
+</html>

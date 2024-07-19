@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Lección 02 - Bootstrap - Selectores y Encadenamiento - Curso jQuery de Cero a Avanzado - Udemy - Fernando Herrera </title>
+
+    <!--  **********  Importacion del Bootstrap  **********  -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+
+    <!--  **********  Importacion del jQuery  **********  -->
+    <script src="js/lib/jquery-2.1.4.min.js"> </script>
+
+
+    <!--  **********  Estilos Internos  **********  -->
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        br { margin-bottom: 60px; }
+
+        .gris { color: gray; }
+        .azul { color: blue; }
+        .verde { color: green; }
+        .rojo { color: red; }
+        .naranja { color: orange; }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1 class="text-center"> Lección 2 - Selectores y Encadenamiento </h1>
+    <hr>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-sm-4 text-center">
+                <img src="img/nophoto.jpg" class="img-circle">
+                <h4> Antonio Cutillas </h4>
+
+                <br> <br>
+                <img src="img/nophoto.jpg">
+            </div>
+
+            <div class="col-sm-5">
+
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae possimus quia illo alias
+                    dolorem!
+                    Exercitationem, consequatur corrupti, atque perspiciatis iure quae sit quidem natus reiciendis,
+                    harum
+                </p>
+
+            </div>
+
+            <div class="col-sm-3">
+                <ul>
+                    <li> Matemáticas </li>
+                    <li> Programación </li>
+                    <li> Análisis </li>
+                    <li> Física </li>
+                    <li> Geografia </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+        $(function() {
+
+            console.warn('Documento Cargado!!!');       //  Documento Cargado.
+
+            /*
+            $("img").attr("src", "img/profesor.jpg");   //  Cambiamos el atributo 'src'
+            $("img").removeClass('img-circle');         //  Eliminamos clase.
+            $("img").addClass('img-thumbnail');         //  Añadimos clase.
+            */
+
+            //  Encadenamiento igual que el código de arriba, pero mas eficiente.
+            $("img")
+                .attr("src", "img/profesor.jpg")
+                .removeClass('img-circle')
+                .addClass('img-thumbnail');
+
+            $("img:nth-of-type(2)")
+                .attr("src", "img2/gato1.jpeg")
+                .addClass('img-circle img-thumbnail')
+                .width(400)
+                .height(350);
+
+
+            //  Modificaciones al segundo bloque (col-sm-5).
+            $(".col-sm-5")
+                .find("p")
+                //.text("Saludos, Soy un Estudiante de Udemy.")
+                .html("<b> Saludos </b>, Soy un Estudiante de Udemy.");
+
+
+            //  Referencia a la Lista ordenada (col-sm-3).
+            $("ul li")
+                .eq(0).addClass('gris').end()
+                .eq(1).addClass('azul').end()
+                .eq(2).addClass('verde').end()
+                .eq(3).addClass('rojo').end()
+                .eq(4).addClass('naranja').end()
+                
+        });
+
+    </script>
+
+</body>
+
+</html>

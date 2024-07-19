@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> Lección 05 - On y Bind - Curso jQuery de Cero a Avanzado - Udemy - Fernando Herrera </title>
+
+	<!--  **********  Importacion del jQuery  **********  -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+
+	<!--  ********** Importacion del Bootstrap y Hoja de Estilos  **********  -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+	<div class="container">
+
+		<h1>Lección 05: On y Bind</h1>
+		<hr>
+
+		<h3> Click me!!! - Añade un h3 </h3>
+		<h4> Click me!!! - Añade un h4 </h4>
+
+	</div>
+
+
+	<!--  **********  Código jQuery  **********  -->
+	<script>
+		
+		//  **********  Otra Forma de Cargar el Documento  **********
+		( function () {
+
+			//  **********  Documento Cargado  **********  -->
+			console.warn("Documento Cargado!!!");
+
+			let contadorH3 = 0;
+			let contadorH4 = 0;
+
+			//  *****  Click en el h3  *****
+			$("h3").on("click", function () {
+
+				//$("body").append( h3Dinamico );		//  Añade al Final del documento.
+				//$("body").prepend( h3Dinamico );		//  Añade al Inicio del documento.
+
+				contadorH3++;
+				let h3Dinamico = "<h3 id='h3-" + contadorH3 + "'> h3 Dinamico: " + contadorH3 + "</h3><hr>";
+				$(".container").append(h3Dinamico);
+
+
+				if (contadorH3 === 3) {
+					//  **********  Función Bind()  **********
+					$("#h3-2").bind("click", function () {
+						alert("Función Dinámica!!!");
+					});
+				}
+			});
+
+
+			//  *****  Click en el h4, Otra forma  *****
+			$("body").on("click", "h4", function () {
+
+				contadorH4++;
+				let h4Dinamico = "<h4 id='h4-" + contadorH4 + "'> h4 Dinamico: " + contadorH4 + "</h4><hr>";
+				$(".container").append(h4Dinamico);
+				if (contadorH4 === 3) {
+					//  **********  Función Bind()  **********
+					$("#h4-2").bind("click", function () {
+						alert("Función Dinámica!!!");
+					});
+				}
+			});
+
+
+		})();
+
+	</script>
+
+</body>
+
+</html>

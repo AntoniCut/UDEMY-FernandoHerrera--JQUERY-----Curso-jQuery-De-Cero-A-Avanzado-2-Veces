@@ -1,0 +1,26 @@
+/*  **************************************
+    **********  /css/style.css  **********
+    **************************************  */
+
+.divPreloader {
+    position: absolute;
+    top: -120px;
+    left: -40px; 
+    opacity: 0.4;
+}
+
+.form-group {
+    position: relative;
+    top: -150px;
+}
+
+@media (max-width: 1000px) {
+    
+    .divPreloader {
+        top: 0;
+    }
+    
+    .form-group {
+        top: -50px;
+    }
+}

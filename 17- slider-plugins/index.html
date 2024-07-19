@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> Slider Plugins - Curso jQuery de Cero a Avanzado - Udemy - Fernando Herrera </title>
+	
+	<!-- **********  Importacion del jQuery  ********** -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+	<script src="js/lib/TweenMax.min.js"></script>
+	
+	<!--  ********** Importacion del Bootstrap y Hoja de Estilos  **********  -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+	<div class="container" align="center">
+
+		<h1>Slideshow</h1>
+		<hr>
+
+		<div class="slideShow">
+			
+			<!--
+			<ul>
+				<li><img src="img/slide1.png"></li>
+				<li><img src="img/slide2.png"></li>
+				<li><img src="img/slide3.png"></li>
+				<li><img src="img/slide4.png"></li>
+			</ul>
+			-->
+			
+		</div>
+		
+		<div class="slideShowButtons"> </div>
+
+		<!--		
+		<div class="slideShowButtons">
+			<div data-idx="0" class="slideButton"> </div>
+			<div data-idx="1" class="slideButton"> </div>
+			<div data-idx="2" class="slideButton"> </div>
+			<div data-idx="3" class="slideButton"> </div>
+			<div data-idx="3" class="slideButtonTimer"> Timer </div>
+		</div>
+		-->
+
+		<br><br>
+
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. In enim perspiciatis, numquam voluptas illo nesciunt
+		consequuntur, sequi repellendus ratione. Beatae odio, sint consectetur suscipit voluptatem quae magnam soluta
+		quos excepturi.
+
+	</div>
+
+	<!--  **********  Importacion del Archivo de jQuery  **********  -->
+	<script src="js/slideShow.js"></script>
+	
+	<!--  **********  Llamada al plugin 'slideShow()'  **********  -->
+	<script>
+
+		$.slideShow({
+			slides: [
+				'img/slide1.png', 
+				'img/slide2.png', 
+				'img/slide3.png', 
+				'img/slide4.png',
+				'img/slide1.png', 
+				'img/slide2.png', 
+				'img/slide3.png', 
+				'img/slide4.png'],
+			intervalo: 2000,
+			velocidad: 1200,
+			color: "green",
+		});
+
+	</script>
+
+</body>
+
+</html>

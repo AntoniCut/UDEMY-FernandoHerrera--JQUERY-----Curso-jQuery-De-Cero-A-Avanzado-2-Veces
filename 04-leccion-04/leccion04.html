@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> Lección 04 - Acordeones - Curso jQuery de Cero a Avanzado - Udemy - Fernando Herrera </title>
+
+	<!--  **********  Importacion del jQuery  **********  -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+
+	<!--  ********** Importacion del Bootstrap y Hoja de Estilos  **********  -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+	<div class="container">
+
+		<h1> Lección 04: Acordeones </h1>
+		<hr>
+
+		<div align="center">
+
+			<dl>
+
+				<dt> Titulo del acordeon 1 </dt>
+				<dd> Este es el detalle del acordeon 1 </dd>
+
+				<dt> Titulo del acordeon 2 </dt>
+				<dd> Este es el detalle del acordeon 2 </dd>
+
+				<dt> Titulo del acordeon 3 </dt>
+				<dd> Este es el detalle del acordeon 3 </dd>
+
+				<dt> Titulo del acordeon 4 </dt>
+				<dd> Este es el detalle del acordeon 4 </dd>
+
+				<dt> Titulo del acordeon 5 </dt>
+				<dd> Este es el detalle del acordeon 5 </dd>
+
+				<dt> Titulo del acordeon 6 </dt>
+				<dd> Este es el detalle del acordeon 6</dd>
+
+			</dl>
+
+		</div>
+
+	</div>
+
+
+	<!--  **********  Código jQuery  **********  -->
+	<script>
+
+		//  **********  Otra Forma de Cargar el Documento  **********
+		(function () {
+
+			//  **********  Documento Cargado  **********  -->
+			console.warn("Documento Cargado!!!");
+
+			//  Referencias al HTML.
+			const $dds = $("dd");
+			const $dt = $("dt");
+
+
+			$dds.hide();
+			$dds.eq(0).show();
+
+			//  Cuando el raton pasa por el titulo del acordeón.
+			$dt.on('mouseenter', function () {
+				
+				$dds.slideUp(200);
+
+				$(this)
+					.next()
+					.slideDown(200);
+			});
+
+														
+		})();
+
+	</script>
+
+</body>
+
+</html>

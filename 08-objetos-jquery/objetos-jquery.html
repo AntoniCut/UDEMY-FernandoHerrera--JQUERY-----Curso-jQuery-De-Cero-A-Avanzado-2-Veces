@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> Objetos en jQuery - Curso jQuery de Cero a Avanzado - Udemy - Fernando Herrera </title>
+	
+	<!--  **********  Importacion del jQuery  **********  -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+	
+	<!--  ********** Importacion del Bootstrap y Hoja de Estilos  **********  -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+	<div class="container text-center">
+
+		<h1> Objetos 201: <small> Objetos en jQuery </small> </h1>
+		<hr>
+
+		<!--  <input type="text" class="form-control" placeholder="Ingrese su nombre">  -->
+
+
+	</div>
+
+
+	<!--  **********  Código jQuery  **********  -->
+	<script>
+		
+		(function() {
+			
+			//  **********  Documento Cargado  **********  -->
+			console.warn("Documento Cargado!!!");
+		
+			//  Creamos un 'input text' dinamicamente.
+			const $caja = '<input type="text" class="form-control" placeholder="Ingrese su nombre"> <br> <br>';
+			$(".container").append( $caja );
+
+			//  Creamos un 'input text' dinamicamente utilizando objetos..
+			$("<input>", {
+				type:        "text",
+				class:       "form-control",
+				id:          "input2",
+				placeholder: "Ingrese su nombre"
+			})	
+				.appendTo('.container')
+				.on('keypress', function( e ) {
+					console.log( e.keyCode);	//  Obtener el código ASCII de la tecla presionada.
+				});
+
+			$("#input2").css({
+				position: "relative",
+				top:      "400px"
+			})
+		
+		})();
+
+	</script>
+
+</body>
+
+</html>

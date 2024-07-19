@@ -1,0 +1,29 @@
+/*  **************************************  */
+/*  **********  /css/style.css  **********  */
+/*  **************************************  */
+
+
+.slideShow {
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    /* background-color: red; */
+}
+
+.slideShow ul {
+    display: flex;
+    margin-left: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+
+
+

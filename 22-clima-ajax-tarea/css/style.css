@@ -1,0 +1,96 @@
+/*  ****************************************  */
+/*  **********  /src/styless.css  **********  */
+/*  ****************************************  */
+
+
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
+
+* {
+  box-sizing: border-box;
+  position: relative;
+  color: white;
+  font-family: 'Kaushan Script', cursive;
+}
+
+html, body {
+  background-color: #5F7462;
+  width: 100%;
+  height: 100%;
+}
+
+aside, main {
+  width: 60%;
+  /*height: 100%;*/
+  float: left;
+  padding: 2rem;
+}
+
+.device {
+  position: absolute;
+  right: 2rem;
+  height: 816px;
+  width: 396px;
+  padding: 80px 10px 30px 10px;
+  border: 5px solid #2f2f2f;
+  border-radius: 60px;
+  background-color: #171717;
+  box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.4);
+}
+.device:before, .device:after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+}
+.device:before {
+  width: 20%;
+  height: 10px;
+  top: 40px;
+  left: 40%;
+  border-radius: 10px;
+  background-color: #2f2f2f;
+}
+.device:after {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: solid 5px #2f2f2f;
+  left: calc(50% - 25px);
+  bottom: 20px;
+}
+.device section {
+  height: calc(100% - 50px);
+  width: 100%;
+  overflow: hidden;
+  background-color: #662d91;
+}
+.device header, .device footer {
+  height: 40px;
+  background-color: #8ba892;
+}
+
+
+.divLoading{
+  position: relative;
+  top: 40%;
+  font-size: 30px;
+
+}
+
+.divInfo{
+  display: none;
+}
+
+
+.imgClima{
+  margin-top: 130px;
+    
+}
+
+.lblTemperatura{
+  font-size: 80px;
+  
+}
+
+.lblCiudad{
+  margin-top: 40px;
+}

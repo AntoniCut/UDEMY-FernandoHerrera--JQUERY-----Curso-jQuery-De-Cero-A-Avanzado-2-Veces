@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> Lección 01 - Bootstrap - Curso jQuery de Cero a Avanzado - Udemy - Fernando Herrera </title>
+
+	<!--  **********  Importacion del Bootstrap  ********** -->
+	<link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+
+	<!--  **********  Importacion del jQuery  **********  -->
+	<script src="js/lib/jquery-2.1.4.min.js"> </script>
+
+	<!--  **********  Estilos CSS Internos  **********  -->
+	<style>
+		li {
+			font-size: 20px;
+		}
+
+		.textoVerde {
+			color: green;
+		}
+
+		.textoRojo {
+			color: red;
+		}
+
+		.negrita {
+			font-weight: bold;
+		}
+	</style>
+
+
+	<!--  **********  Código jQuery  **********  -->
+	<script>
+
+		/*  **********  1ª FORMA  **********
+		$(document).ready(function () {
+			
+			console.warn('Documento Cargado!!');
+			//  ***** La Función jQuery()  --  Se utiliza poco  *****
+			//jQuery('ul').addClass('textoVerde');
+			//jQuery('ul:nth-of-type(2) li').addClass('negrita');
+			//jQuery('ul').css('color', 'red');
+			$('ul').addClass('textoVerde');
+			$('ul:nth-of-type(2) li').addClass('negrita');
+		});
+		*/
+
+		//  **********  2ª FORMA  **********
+		$(function () {
+
+			console.warn('Documento Cargado!!');
+
+			$('li:first-child').addClass('textoVerde');
+			$('li:last-child').addClass('textoRojo');
+			$('ul:nth-of-type(2) li').addClass('negrita');
+
+		});
+
+	</script>
+
+</head>
+
+<body>
+
+	<!--  *****  Contenido Principal  *****  -->
+	<div class="container">
+
+		<h1> Lección 01 - jQuery y Bootstrap </h1>
+		<hr>
+
+		<!--  *****  Creacion de Listas  *****-->
+		<ul>
+			<li> <span class="label label-primary"> Hola 1 </span> </li>
+			<li>Hola 2</li>
+			<li>Hola 3</li>
+		</ul>
+		<ul>
+			<li>Negrita</li>
+			<li>Negrita</li>
+			<li>Negrita</li>
+		</ul>
+
+		<!--  *****  Creacion de una Tabla  *****  -->
+		<table class="table table-stripped">
+
+			<tr>
+				<td> Campo1 </td>
+				<td> Campo2 </td>
+				<td> Campo3 </td>
+				<td> Campo4 </td>
+				<td> Campo5 </td>
+			</tr>
+
+			<tr>
+				<td> Descripcion Campo1 </td>
+				<td> Descripcion Campo2 </td>
+				<td> Descripcion Campo3 </td>
+				<td> Descripcion Campo4 </td>
+				<td> Descripcion Campo5 </td>
+			</tr>
+
+			<tr>
+				<td> Descripcion Campo1 </td>
+				<td> Descripcion Campo2 </td>
+				<td> Descripcion Campo3 </td>
+				<td> Descripcion Campo4 </td>
+				<td> Descripcion Campo5 </td>
+			</tr>
+			
+		</table>
+
+		<hr>
+
+		<button class="btn btn-danger"> botón </button>
+		<a href="#"> Punto de Anclaje </a>
+
+	</div>
+
+</body>
+
+</html>

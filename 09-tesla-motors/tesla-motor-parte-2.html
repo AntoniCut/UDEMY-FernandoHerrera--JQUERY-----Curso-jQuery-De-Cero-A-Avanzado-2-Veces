@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title> Tesla Motor Parte 2 - Curso jQuery de Cero a Avanzado - Udemy - Fernando Herrera </title>
+
+	<!--  **********  Importacion del jQuery  **********  -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+
+	<!--  ********** Importacion del Bootstrap y Hoja de Estilos  **********  -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+	<div class="container text-center">
+
+		<h1> Objetos Prácticos: <small> Ejemplo de vehículo </small> </h1>
+		<hr>
+
+
+		<div class="divPreloader">
+			<img src="img/loading.gif" class="imgLoader img-responsive">
+		</div> 
+
+
+		<div class="divVistaPrevia">
+			<img id="imgCarro" class="img-responsive">
+			<!-- <img id="imgCarro" src="img/tesla/modelS-blanco.jpg" class="img-responsive"> -->
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-offset-4 col-sm-5">
+				<select id="cmbColor" class="form-control">
+					
+					<!-- <option value="blanco">Blanco</option> -->
+					
+					<!--  Creamos el comboBox Dinamicamente  -->
+										
+					
+					<!-- <option value="negro">Negro</option> -->
+					<!-- <option value="rojo">Rojo</option> -->
+
+				</select>
+			</div>
+		</div>
+
+	</div>
+
+
+	<!--  **********  Código jQuery  **********  -->
+	<script>
+
+		(function () {
+
+			//  **********  Documento Cargado  **********  -->
+			console.warn("Documento Cargado!!!");
+
+
+			//  Creacion del objeto para los colores del comboBox.
+			const teslaView = {
+
+				loader:  $(".divPreloader"),
+				colores: ['blanco', 'verde', 'gris', 'café'],
+
+				//  Funcion para cambiar el color.
+				cambiarColor: function( $img ) {
+
+					const $loader = teslaView.loader;
+					      $loader.fadeIn(150);			//  Aparece la imagen de precarga.
+
+					if( $img === undefined ) {
+						const $color = teslaView.colores[0];
+						      $img = "img/tesla/modelS-" + $color + ".jpg";		//  Obtenemos la URL de la imagen.
+					}
+
+					//const ahora = new Date();
+					//console.log( ahora );
+					//$img = "https://switzerland-tour.com/storage/media/4-ForArticles/swiss-mountains.jpg?d=" + ahora;
+
+					//  Creamos un objeto 'img'.
+					$("<img>", {
+						src:   $img,
+						class: "img-responsive"
+					})
+						.load( function() {		//  Cargar las imagenes.
+							console.log("Imagen Cargada");
+													
+							//const ahora = new Date();
+							//console.log( ahora );
+
+							$(".divVistaPrevia").find("img").remove();
+							$(this).appendTo(".divVistaPrevia");
+
+							$loader.fadeOut(150);		//  Desaparece la imagen de precarga.
+						})
+
+				},
+				
+				//  Función principal .
+				init: function ( opciones ) {
+
+					//  Función de jQuery para expandir las opciones.
+					$.extend( teslaView, opciones);
+					console.log( teslaView );
+
+					//  Ciclo para barrer todo el arreglo de colores
+					//  y crear nuestro combobox o select.
+					for (let i = 0; i < this.colores.length; i++) {
+
+						//  Creamos un objeto 'option' para el comboBox.
+						const color = teslaView.colores[i];
+						$('<option>', {
+							value: color,
+							text:  color
+						}).appendTo('#cmbColor');
+					}
+
+					//  Nueva función del cambio.
+					$('#cmbColor').bind('change', function () {
+						
+						const $color = $(this).val();		//  Obtenemos el valor del color.
+						const $url = "img/tesla/modelS-" + $color + ".jpg";		//  Obtenemos la URL de la imagen.
+						teslaView.cambiarColor( $url );
+						//$('#imgCarro').attr("src", $url);
+					});
+
+					//  Cambiar la imagen por primera vez o al Iniciar.
+					teslaView.cambiarColor();
+
+				}
+
+			};
+
+			//  Le pasa las opciones a la función extend.
+			teslaView.init({
+				colores: ['blanco', 'azul', 'cafe', 'gris', 'negro', 'rojo', 'rojooscuro', 'verde']
+			});
+
+
+
+
+			/*
+			$("#cmbColor").on('change', function() {
+
+				const $color = $(this).val();		//  Obtenemos el valor del color.
+				const $url = "img/tesla/modelS-" + $color + ".jpg";		//  Obtenemos la URL de la imagen.
+
+				$('#imgCarro').attr("src", $url);
+			});
+			*/
+
+
+		})();
+
+	</script>
+
+</body>
+
+</html>

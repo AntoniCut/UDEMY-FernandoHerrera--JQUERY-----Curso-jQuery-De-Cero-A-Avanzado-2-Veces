@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title> Data Attribute - Curso jQuery de Cero a Avanzado - Udemy - Fernando Herrera </title>
+	<!--  **********  Importacion del jQuery  **********  -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+	<!--  ********** Importacion del Bootstrap y Hoja de Estilos  **********  -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+	<div class="container text-center">
+
+		<h1>Tema extra: <small>Data-Attribute</small></h1>
+		<hr>
+
+		<img src="img/1.jpg" alt="jpg" color="azul" data-color="verde">
+		<br> <br>
+
+		<img src="img/2.png" alt="png" data-color="blanco">
+
+	</div>
+
+
+	<!--  **********  Código jQuery  **********  -->
+	<script>
+
+		(function() {
+
+			//  **********  Documento Cargado  **********  -->
+			console.warn("Documento Cargado!!!");
+
+			//  **********  Formas de hacer Atributos Personalizados  **********
+			const $imagen = $("img");
+			console.log($imagen.attr("alt"));
+
+			$imagen.attr("alt", "Es un JPG");
+			console.log($imagen.attr("alt"));
+
+			$imagen.attr("color");
+			console.log($imagen.attr("color"));
+
+			$imagen.attr("data-color");
+			console.log($imagen.attr("data-color"));
+			console.log($imagen.data("color"));
+
+			
+			//  **********  Ejercicio  **********
+			$("img").on("mouseenter", function() {
+
+				console.log( $(this).data("color") );
+				alert( $(this).data("color") );
+				
+				console.log( $(this).attr("alt") );
+				alert( $(this).attr("alt") );
+			});
+
+
+		})();
+
+	</script>
+
+</body>
+
+</html>

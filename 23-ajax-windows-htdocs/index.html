@@ -1,0 +1,81 @@
+<!--  ***********************************  -->
+<!--  **********  /index.html  **********  -->
+<!--  ***********************************  -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> Ajax - SELECT - Curso jQuery de Cero a Avanzado - Udemy - Fernando Herrera </title>
+
+	<!--  **********  Importacion del jQuery  ********** -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+
+
+	<!--  **********  Importacion del Bootstrap y Hojas de Estilos  ********** -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+
+	<!--  **********  Importación del FontAwesome  **********  -->
+	<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+
+	<!--  **********  Importacion del Sweet Alert - Caja de Notificaciones  **********  -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+
+	<div class="container">
+
+		<h1> Peticiones Ajax - SELECT <small> jquery </small></h1>
+		<hr>
+
+		<div class="text-right">
+			<a href="insert.html" class="btn btn-primary"> <i class="fa fa-plus"> </i> Insertar registro </a>
+			<br> <br>
+		</div>
+
+		<table class="table table-striped">
+
+			<thead>
+				<tr>
+					<td class="w50"> ID </td>
+					<td> Nombre </td>
+					<td class="w50"> Estado </td>
+					<td class="w50"> Actualizar </td>
+					<td class="w50"> Eliminar </td>
+				</tr>
+			</thead>
+
+			<tbody id="tblRegistros">
+
+				<!--  -----  Creamos las Filas Dinamicamente  -----  -->
+
+				<!--
+				<tr>
+					<td> 3 </td>
+					<td> Fernando </td>
+					<td class="text-center">  
+						<a href="" class="btn btn-primary"> <i class="fa fa-edit"> </i> </a>
+					</td>
+					<td class="text-center"> 
+						<a href="" data-id="1" class="btn btn-danger"> <i class="fa fa-trash-o"> </i> </a> 
+					</td>
+				</tr>
+				-->
+
+			</tbody>
+
+		</table>
+
+	</div>
+
+	<!--  **********  Archivo jQuery  **********  -->
+	<script src="js/select.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> Lección 03 - Eventos - Curso jQuery de Cero a Avanzado - Udemy - Fernando Herrera </title>
+
+	<!--  **********  Importacion del jQuery  **********  -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+
+	<!--  ********** Importacion del Bootstrap  **********  -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<!--  **********  Estilos Internos  **********  -->
+	<style>
+
+		.img100 {
+			width: 100px;
+			height: 100px;
+		}
+
+		.divRojo {
+			width: 100px;
+			height: 100px;
+			margin-top: 50px;
+			background-color: red;
+		}
+
+	</style>
+
+</head>
+
+
+<body>
+
+	<div class="container">
+
+		<h1>Lección 03: Eventos</h1>
+		<hr>
+
+		<button id="bot1" class="btn btn-primary"> Evento click </button>
+
+		<br> <br>
+		<img src="img/profesor.jpg" class="img100">
+
+		<div class="divRojo"> </div>
+		
+		<br> <br>
+		<a id="linkUdemy" href="https://www.udemy.com" target="_blank"> Udemy </a>
+
+		<br> <br>
+
+	</div>
+
+
+	<!--  **********  Código jQuery  **********  -->
+	<script>
+
+		$(function() {
+
+			console.warn("Documento Cargado!!!");
+
+			//  *****  'click' en el botón  *****
+			$("#bot1").on("click", function() {
+				console.log("click");
+				alert("Click");
+			});
+
+			//  *****  Ratón 'entra' en la imagen  *****
+			$(".img100").on("mouseenter", function() {
+				console.log("Mouse Enter");
+				//alert("Mouse Enter");
+				$(this).attr("src", "img/nophoto.jpg");
+			});
+
+			//  *****  Ratón 'sale' de la imagen  *****
+			$(".img100").on("mouseleave", function() {
+				console.log("Mouse Leave");
+				alert("Mouse Leave");
+				$(this).attr("src", "img/profesor.jpg");
+			});
+
+			//  *****  'click' en el div Rojo  *****
+			$(".divRojo").on("click", function() {
+				alert("Click en el divRojo");
+
+			});
+
+
+			//  *****  Controles especiales para links.
+            $("#linkUdemy").on("click", function (e) {
+                e.preventDefault();
+                alert("Click en el link");
+
+                let href = $(this).attr("href");
+                alert(href);
+
+                let target = $(this).attr("target");
+                alert(target);
+
+                let newWindow = window.open(href, target);
+                newWindow.focus();
+            });
+
+			$(document).ready(function() {
+				console.warn("La Página esta lista para lo que sea");
+				alert("La Página esta lista para lo que sea");
+			});
+
+		});
+
+	</script>
+
+</body>
+
+</html>

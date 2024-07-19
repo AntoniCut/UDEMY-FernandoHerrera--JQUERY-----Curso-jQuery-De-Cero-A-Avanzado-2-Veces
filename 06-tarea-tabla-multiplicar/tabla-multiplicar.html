@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> Tarea - Tabla de Multiplicar - Curso jQuery de Cero a Avanzado - Udemy - Fernando Herrera </title>
+
+	<!--  **********  Importacion del jQuery  **********  -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+	<!--  ********** Importacion del Bootstrap y Hoja de Estilos  **********  -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+
+	<div class="container">
+
+		<h1> Tarea: <small> </small> </h1>
+		<hr>
+
+		<select id="cmbBase" class="form-control">
+			<option value="2"> 2 </option>
+			<option value="3"> 3 </option>
+			<option value="4"> 4 </option>
+			<option value="5" selected> 5 </option>
+			<option value="6"> 6 </option>
+			<option value="7"> 7 </option>
+			<option value="8"> 8 </option>
+			<option value="9"> 9 </option>
+		</select>
+		<br>
+
+		<button class="btn btn-primary"> Agregar línea </button>
+		<br><br>
+
+		<table class="table table-striped">
+			<tr>
+				<th>Base</th>
+				<th>x</th>
+				<th>Número</th>
+				<th>=</th>
+				<th>Resultado</th>
+			</tr>
+
+		</table>
+
+	</div>
+
+
+	<!--  **********  Código jQuery  **********  -->
+	<script>
+
+		(function () {
+
+			//  **********  Documento Cargado  **********  -->
+			console.warn("Documento Cargado!!!");
+
+			//  Obtenemos la base.
+			const $base = $('#cmbBase').val();
+
+			//  Mostramos el texto de la tabla a operar en la cabecera.
+			$("small").text("Tabla del " + $base);
+
+			let contador = 0;
+
+			//  *****  pulsar en el botón  *****
+			$('button').on('click', function () {
+
+				contador++;
+				const $base = $('#cmbBase').val();
+
+				let linea = "";
+				linea += '<tr>';
+				linea += '<th>' + $base + '</th>';
+				linea += '<th> X </th>';
+				linea += '<th>' + contador + '</th>';
+				linea += '<th> = </th>';
+				linea += '<th>' + ($base * contador) + '</th>';
+				linea += '</tr>';
+
+				$('table').append(linea);
+
+			});
+
+
+			// *****  Funcion que detecta el cambio de la base  *****
+			$("#cmbBase").on("change", function () {
+
+				const $base = $('#cmbBase').val();
+				$("small").text("Tabla del " + $base);
+
+				$("tr").not(":eq(0)").remove();
+				contador = 0;
+
+			});
+			
+		})();
+
+
+	</script>
+
+
+</body>
+
+</html>
