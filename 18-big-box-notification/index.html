@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<!-- **********  Importación de la Libreria 'FontAweSome' -->
-	<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" >
+	<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
 
 </head>
 
@@ -28,22 +28,22 @@
 	<!--  **********  Caja Contenedor  **********  -->
 	<!-- <div class="bigBox-contenedor" align="center"> -->
 
-		<!--  -----  Botón Cerrar  -----  -->
-		<!-- <div class="bigBox-Cerrar"> <i class="fa fa-times"> </i> </div> -->
+	<!--  -----  Botón Cerrar  -----  -->
+	<!-- <div class="bigBox-Cerrar"> <i class="fa fa-times"> </i> </div> -->
 
-		<!--  -----  Circulo  -----  -->
-		<!-- <div class="bigBox-Circulo"> <i class="fa fa-thumbs-o-up fa-3x"> </i> </div> -->
+	<!--  -----  Circulo  -----  -->
+	<!-- <div class="bigBox-Circulo"> <i class="fa fa-thumbs-o-up fa-3x"> </i> </div> -->
 
-		<!--  -----  Contenido  -----  -->
-		<!-- <div class="bigBox-Contenido"> -->
-			<!-- <span class="bigBox-Titulo"> Genial </span> -->
-			<!-- <span class="bigBox-Texto"> Estamos listos para proceder usando Udemy </span> -->
-		<!-- </div> -->
+	<!--  -----  Contenido  -----  -->
+	<!-- <div class="bigBox-Contenido"> -->
+	<!-- <span class="bigBox-Titulo"> Genial </span> -->
+	<!-- <span class="bigBox-Texto"> Estamos listos para proceder usando Udemy </span> -->
+	<!-- </div> -->
 
-		<!-- <button class="bigBox-Boton"> Empezar Curso ! </button> -->
+	<!-- <button class="bigBox-Boton"> Empezar Curso ! </button> -->
 
 	<!-- </div> -->
-    
+
 
 	<div class="container">
 
@@ -56,28 +56,28 @@
 
 	<!--  **********  Archivo de jQuery  **********  -->
 	<script src="js/bigBox.js"> </script>
-	
-	<!--  **********  Llamada al plugin 'bigBox()'  **********  -->
-	<script> 
 
-		$("button").on("click", function() {
+	<!--  **********  Llamada al plugin 'bigBox()'  **********  -->
+	<script>
+
+		$("button").on("click", function () {
 
 			$.bigBox({
-				// fa:        "fa-codiepie",
+				fa:        "fa-codiepie",
 				titulo:    "Desde botón",
 				contenido: "Este es el contenido del bigbox.",
-				boton: "Ingresar a Udemy"
-			}, function( boton ) {
+				boton:     "Ingresar a Udemy"
+			}, function (boton) {
 
 				console.log(boton);
 
 			});
 
 		});
-		
+
 
 	</script>
-	
+
 	<!-- 
 	<script>
 

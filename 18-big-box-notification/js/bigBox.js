@@ -11,7 +11,7 @@
     $.bigBox = function (opciones, callback) {
 
         opciones = $.extend({
-            fa: "fa-thumb-o-up",
+            fa: "fa-thumbs-o-up",
             titulo: undefined,
             contenido: undefined,
             boton: "Aceptar"

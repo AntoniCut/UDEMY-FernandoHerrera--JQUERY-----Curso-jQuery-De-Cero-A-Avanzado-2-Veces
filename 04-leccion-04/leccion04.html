@@ -50,37 +50,53 @@
 	</div>
 
 
+
 	<!--  **********  Código jQuery  **********  -->
-	<script>
+	<!-- <script>
+		$(document).ready(function () {
 
-		//  **********  Otra Forma de Cargar el Documento  **********
-		(function () {
-
-			//  **********  Documento Cargado  **********  -->
-			console.warn("Documento Cargado!!!");
-
-			//  Referencias al HTML.
+			// Ocultar todos los dd al cargar la página
 			const $dds = $("dd");
-			const $dt = $("dt");
-
-
 			$dds.hide();
-			$dds.eq(0).show();
 
-			//  Cuando el raton pasa por el titulo del acordeón.
-			$dt.on('mouseenter', function () {
-				
-				$dds.slideUp(200);
-
-				$(this)
-					.next()
-					.slideDown(200);
+			// Agregar evento click en los dt
+			$("dt").click(function () {
+				// Alternar visibilidad del siguiente dd
+				$(this).next().toggle(200);
 			});
+		});
+	</script> -->
 
-														
-		})();
+<script>
 
-	</script>
+	//  **********  Otra Forma de Cargar el Documento  **********
+	(function () {
+
+		//  **********  Documento Cargado  **********  -->
+		console.warn("Documento Cargado!!!");
+
+		//  Referencias al HTML.
+		const $dds = $("dd");
+		const $dt = $("dt");
+
+
+		$dds.hide();
+		$dds.eq(0).show();
+
+		//  Cuando el raton pasa por el titulo del acordeón.
+		$dt.on('mouseenter', function () {
+			
+			$dds.slideUp(200);
+
+			$(this)
+				.next()
+				.slideDown(200);
+		});
+
+													
+	})();
+
+</script> 
 
 </body>
 
